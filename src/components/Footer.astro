@@ -1,7 +1,36 @@
 ---
+// Importer Link-komponenten
+import Link from './Link.astro';
 ---
-<footer class="bg-primary-500 text-white">
-    <div class="container mx-auto p-4">
-        <p>&copy; 2025</p>
+
+<footer class="bg-[var(--color-accent-900)] text-[var(--color-primary-900)] py-12 sm:py-16 md:py-20 px-8 sm:px-6 md:px-0">
+  <div class="container mx-auto flex flex-col md:flex-row justify-center items-start gap-12 sm:gap-20 md:gap-40 lg:gap-80">
+    
+    <!-- Første spalte: Kontakt -->
+    <div class="flex flex-col">
+      <h4 class="text-lg sm:text-xl md:text-lg font-bold mb-3 sm:mb-4" style="font-family: var(--font-overskrift);">
+        Don't hesitate to reach out to us!
+      </h4>
+      <h5 class="text-base sm:text-sm md:text-base leading-relaxed flex flex-col gap-2 sm:gap-2 md:gap-3" style="font-family: var(--font-underoverskrift);">
+        <a href="mailto:Instant@mail.com" class="underline py-1 sm:py-1.5" style="color: var(--color-primary-900);">
+          Instant@mail.com
+        </a>
+        <span class="py-1 sm:py-1.5">Guldbergsgade 29N, 2200 København</span>
+      </h5>
     </div>
+
+    <!-- Anden spalte: Sociale medier -->
+    <div class="flex flex-col">
+      <h4 class="text-lg sm:text-xl md:text-lg font-bold mb-3 sm:mb-4" style="font-family: var(--font-overskrift);">
+        Follow along on our socials!
+      </h4>
+      <h5 class="text-base sm:text-sm md:text-base flex flex-col gap-2 sm:gap-2 md:gap-3" style="font-family: var(--font-underoverskrift);">
+        <Link href="https://www.ek.dk" target="_blank" variant="textlink" class="py-1 sm:py-1.5">Website</Link>
+        <Link href="https://www.instagram.com/_ekdigital?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" variant="textlink" class="py-1 sm:py-1.5">Instagram</Link>
+        <Link href="https://www.facebook.com/ErhvervsakademiKoebenhavn.dk" target="_blank" variant="textlink" class="py-1 sm:py-1.5">Facebook</Link>
+        <Link href="https://www.linkedin.com/school/kea-k-benhavns-erhvervsakademi/posts/?feedView=all" target="_blank" variant="textlink" class="py-1 sm:py-1.5">LinkedIn</Link>
+      </h5>
+    </div>
+
+  </div>
 </footer>
