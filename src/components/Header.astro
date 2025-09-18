@@ -1,68 +1,103 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
-import logo from '../assets/images/logo.svg?url';
-import Heading from './Heading.astro';
+import logo from "../assets/images/logo.svg?url";
+import Heading from "./Heading.astro";
 ---
-<header x-data="{ showMenu: false }" class="bg-[var(--color-primary-900)] pb-8 sm:pb-10 md:pb-12 lg:pb-16">
-  <div id="navbar" class="container mx-auto px-4 py-3 flex items-center justify-between">
 
+<header x-data="{ showMenu: false }" class="bg-[var(--color-primary-900)]">
+  <div
+    id="navbar"
+    class="container mx-auto px-4 py-3 flex items-center justify-between"
+  >
     <!-- Logo -->
-    <a href="/" id="logo" class="mx-auto lg:mx-0 transform transition-transform duration-200 hover:scale-105">
-      <img 
-        src={logo} 
-        alt="Logo" 
-        class="h-32 sm:h-36 md:h-40 lg:h-48 w-auto"
-      />
+    <a
+      href="/"
+      id="logo"
+      class="mx-auto lg:mx-0 transform transition-transform duration-200 hover:scale-105"
+    >
+      <img src={logo} alt="Logo" class="h-32 sm:h-36 md:h-40 lg:h-48 w-auto" />
     </a>
 
     <!-- Desktop menu -->
     <nav class="hidden lg:flex gap-12 text-[var(--color-accent-900)]">
       <Heading htmlheading="h1" size="small" font="overskrift">
-        <a href="/share" class="font-bold transition-opacity duration-200 hover:opacity-70">
+        <a
+          href="/share"
+          class="font-bold transition-opacity duration-200 hover:opacity-70"
+        >
           Share Your Instant
         </a>
       </Heading>
       <Heading htmlheading="h1" size="small" font="overskrift">
-        <a href="/winnersandnominees" class="font-bold transition-opacity duration-200 hover:opacity-70">
+        <a
+          href="/winnersandnominees"
+          class="font-bold transition-opacity duration-200 hover:opacity-70"
+        >
           Winners & Nominees
         </a>
       </Heading>
       <Heading htmlheading="h1" size="small" font="overskrift">
-        <a href="/info" class="font-bold transition-opacity duration-200 hover:opacity-70">
+        <a
+          href="/info"
+          class="font-bold transition-opacity duration-200 hover:opacity-70"
+        >
           Information
         </a>
       </Heading>
     </nav>
 
     <!-- Burger menu button -->
-    <button @click="showMenu = !showMenu" class="lg:hidden p-3 text-[var(--color-accent-900)] transform transition-transform duration-200 hover:scale-110">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-           stroke-width="3" stroke="currentColor" class="w-10 h-10">
-        <path stroke-linecap="round" stroke-linejoin="round" 
-              d="M4 6h16M4 12h16M4 18h16"/>
+    <button
+      @click="showMenu = !showMenu"
+      class="lg:hidden p-3 text-[var(--color-accent-900)] transform transition-transform duration-200 hover:scale-110"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="currentColor"
+        class="w-10 h-10"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
   </div>
 
   <!-- Mobilmenu -->
-  <nav x-show="showMenu" @click.outside="showMenu = false"
-       class="lg:hidden flex flex-col w-full items-center gap-4 py-6 bg-[var(--color-primary-900)] transition-all duration-300">
+  <nav
+    x-show="showMenu"
+    @click.outside="showMenu = false"
+    class="lg:hidden flex flex-col w-full items-center gap-4 py-6 bg-[var(--color-primary-900)] transition-all duration-300"
+  >
     <Heading htmlheading="h1" size="small" font="overskrift">
-      <a href="/share" @click="showMenu = false" 
-         class="font-bold text-[var(--color-accent-900)] block w-full text-center py-3 transition-opacity duration-200 hover:opacity-70">
+      <a
+        href="/share"
+        @click="showMenu = false"
+        class="font-bold text-[var(--color-accent-900)] block w-full text-center py-3 transition-opacity duration-200 hover:opacity-70"
+      >
         Share Your Instant
       </a>
     </Heading>
     <Heading htmlheading="h1" size="small" font="overskrift">
-      <a href="/winnersandnominees" @click="showMenu = false" 
-         class="font-bold text-[var(--color-accent-900)] block w-full text-center py-3 transition-opacity duration-200 hover:opacity-70">
+      <a
+        href="/winnersandnominees"
+        @click="showMenu = false"
+        class="font-bold text-[var(--color-accent-900)] block w-full text-center py-3 transition-opacity duration-200 hover:opacity-70"
+      >
         Winners & Nominees
       </a>
     </Heading>
     <Heading htmlheading="h1" size="small" font="overskrift">
-      <a href="/info" @click="showMenu = false" 
-         class="font-bold text-[var(--color-accent-900)] block w-full text-center py-3 transition-opacity duration-200 hover:opacity-70">
+      <a
+        href="/info"
+        @click="showMenu = false"
+        class="font-bold text-[var(--color-accent-900)] block w-full text-center py-3 transition-opacity duration-200 hover:opacity-70"
+      >
         Information
       </a>
     </Heading>

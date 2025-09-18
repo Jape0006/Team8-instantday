@@ -10,10 +10,11 @@ const { href, class: className = "" } = Astro.props;
           py-2 px-6 rounded 
           hover:opacity-90 transition 
           text-sm sm:text-base md:text-base 
-          mb-32 sm:mb-40 md:mb-48
+         
           ${className}`}
 >
   <span class="text-center">
-    <slot /> <!-- her kommer teksten ind -->
+    <slot />
+    <!-- her kommer teksten ind -->
   </span>
 </a>

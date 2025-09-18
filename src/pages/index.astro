@@ -49,188 +49,244 @@ import Heropic from "../assets/images/Heropic.webp";
 
 <MainLayout title="Home">
   <main class="">
-    <section class="items-center mt-20 mb-40 bg-black">
+    <section class="items-center mb-20 bg-black">
       <Image class="mx-auto" src={Heropic} alt="Foto" />
       <!-- Overskrift med linjeskift kun på mobil -->
-      <Heading
-        class="text-white text-3xl leading-tight sm:text-5xl font-bold uppercase tracking-wide"
-        htmlheading="h1"
-        size="large"
-        font="overskrift"
-      >
-        October 18 is <br class="sm:hidden" />
-        Instant Day
-      </Heading>
 
-      <Button class="mt-6" />
-    </section>
-
-    <!-- What is Instant Day -->
-    <section
-      class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row md:items-center gap-12 mb-40"
-    >
-      {/* Tekstblok – bredere */}
-      <div class="md:basis-3/5">
-        <Heading htmlheading="h2" size="medium" font="underoverskrift">
-          What is Instant Day?
-        </Heading>
-
-        <Text class="mt-4">
-          October 18 is Instant Day – a day all about celebrating instant
-          photography. Dig out your Polaroid, Instax or whatever, and shoot
-          something! Share your best instant photos on social media or enter the
-          competition. A nice prize for one lucky instant photographer!
-        </Text>
-      </div>
-
-      {/* Billedblok – smallere og med luft */}
-      <div class="md:basis-2/5 flex justify-center">
-        <Image class="mx-auto sm:mx-0" src={Instantdaypic} alt="Foto" />
-      </div>
-    </section>
-
-    <!-- Why Instant Photography -->
-    <section class="bg-accent-900 px-6 py-12 mb-40">
-      <div
-        class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 md:items-start gap-12"
-      >
-        <!-- Billede (5/12 på md+). Mobil: efter teksten -->
-        <div class="order-2 md:order-1 md:col-span-5 mt-8 md:mt-0">
-          <Image
-            class="w-72 h-auto md:mx-0 justify-center items-center mx-auto"
-            src={pic3}
-            alt="Foto"
-          />
+      <div class="px-6 sm:px-10 md:px-16 lg:px-24 mt-10">
+        <!-- Container for h1 og h2 med afstand -->
+        <div class="flex flex-col space-y-8 sm:space-y-10 md:space-y-12">
+          <Heading
+            htmlheading="h1"
+            size="large"
+            font="overskrift"
+            stylingclasses="md:mb-8 mb-5"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+          >
+            October 18 is <br class="sm:hidden" />
+            Instant Day
+          </Heading>
         </div>
 
-        <!-- Tekst (7/12 på md+). Mobil: før billedet -->
-        <div class="order-1 md:order-2 md:col-span-7">
+        <Button href="#submissionForm">Save the date!</Button>
+      </div>
+
+      <!-- What is Instant Day -->
+      <section
+        class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row md:items-center gap-12 mb-20"
+      >
+        {/* Tekstblok – bredere */}
+        <div class="md:basis-3/5">
           <Heading htmlheading="h2" size="medium" font="underoverskrift">
-            Why Instant Photography?
+            What is Instant Day?
           </Heading>
 
-          <Text
-            class="mt-4 text-base md:text-lg leading-7 md:leading-8 space-y-4"
-          >
-            Instant Photography is a testament to life: It all started back in
-            the 1940’s with a 3 year old kid. She wanted to see her fathers
-            images right away. The father, Edwin Land, embarked on a mission: To
-            invent instant photography. Half a decade later, Edwin Land launched
-            Instant photography and established the Polaroid brand. Instant
-            photography turned into big business in the 70’s and 80’s, until the
-            digital era almost killed the industry. The massive amount of time
-            wasted on the small screens have spurred a counterreaction:
-            Analogue, off-line experiences have become popular again. And
-            instant photography is just that: An analogue, life-affirming and
-            tactile photography experience. So let’s celebrate life, and make
-            memories:-)
+          <Text stylingclasses="mt-4 ml-10 md:ml-20">
+            October 18 is Instant Day – a day all about celebrating instant
+            photography. Dig out your Polaroid, Instax or whatever, and shoot
+            something! Share your best instant photos on social media or enter
+            the competition. A nice prize for one lucky instant photographer!
           </Text>
         </div>
-      </div>
-    </section>
-    <section>
-      <Image
-        class="w-200 h-auto flex items-center mx-auto mb-40"
-        src={datavisualisering}
-        alt="Foto"
-      />
-    </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-12 mb-20">
-      <Heading
-        class="text-accent-900"
-        htmlheading="h2"
-        size="medium"
-        font="underoverskrift"
-      >
-        How to participate
-      </Heading>
+        {/* Billedblok – smallere og med luft */}
+        <div class="md:basis-2/5 flex justify-center">
+          <Image class="mx-auto sm:mx-0" src={Instantdaypic} alt="Foto" />
+        </div>
+      </section>
 
-      <div class="grid grid-cols-1 md:grid md:grid-cols-3 md:gap-8 mt-6">
-        {/* Liste i venstre side */}
-        <div class="space-y-6 col-span-2">
-          <li>
-            <Text>
-              Take a photo of your instant with your smartphone (or scan for max
-              quality) – the file should be between 2–10 MB, jpg/jpeg or webp
-              format.
-            </Text>
-          </li>
-          <li>
-            <Text>
-              Upload your photo and credentials via the “share your instants”
-              page.</Text
+      <!-- Why Instant Photography -->
+      <section class="bg-accent-900 px-6 py-12 mb-20">
+        <div
+          class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 md:items-start gap-12"
+        >
+          <!-- Billede (5/12 på md+). Mobil: efter teksten -->
+          <div class="order-2 md:order-1 md:col-span-5 mt-8 md:mt-0">
+            <Image
+              class="w-72 h-auto md:mx-0 justify-center items-center mx-auto"
+              src={pic3}
+              alt="Foto"
+            />
+          </div>
+
+          <!-- Tekst (7/12 på md+). Mobil: før billedet -->
+          <div class="order-1 md:order-2 md:col-span-7">
+            <Heading htmlheading="h2" size="medium" font="underoverskrift">
+              Why Instant Photography?
+            </Heading>
+
+            <Text
+              stylingclasses="mt-4 text-base md:text-lg leading-7 md:leading-8 space-y-4 ml-10 md:ml-20"
             >
-          </li>
-          <li>
-            <Text>
-              Agree to our terms and conditions. The short version: Participants
-              must be 18+, portrayed persons must have given consent, and you
-              agree your instant can be exhibited and used to promote the
-              contest.
+              Instant Photography is a testament to life: It all started back in
+              the 1940’s with a 3 year old kid. She wanted to see her fathers
+              images right away. The father, Edwin Land, embarked on a mission:
+              To invent instant photography. Half a decade later, Edwin Land
+              launched Instant photography and established the Polaroid brand.
+              Instant photography turned into big business in the 70’s and 80’s,
+              until the digital era almost killed the industry. The massive
+              amount of time wasted on the small screens have spurred a
+              counterreaction: Analogue, off-line experiences have become
+              popular again. And instant photography is just that: An analogue,
+              life-affirming and tactile photography experience. So let’s
+              celebrate life, and make memories:-)
             </Text>
-          </li>
-          <li>
-            <Text>
-              You can make up to 5 submissions – repeat step 1–3 for each
-              submission ;-)</Text
-            >
-          </li>
+          </div>
         </div>
-        {/* Tekst og pil i højre side */}
-        <div
-          class="flex flex-col items-center md:items-end justify-center text-accent-900 md:mt-50 mt-10"
-        >
-          <Text class="mb-2">Still need inspiration?</Text>
-          <Image src={pil} alt="Arrow" class="w-15 h-auto" />
-        </div>
-      </div>
-    </section>
-    <section class="bg-accent-900 py-12 mb-40 overflow-hidden">
-      <!-- centreret “scene” til bunken -->
-      <div
-        class="relative mx-auto max-w-[600px] sm:max-w-[900px] h-[400px] sm:h-[650px]"
-      >
-        <!-- Øverste kort -->
-        <div
-          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[6deg] animate-top-1"
-        >
-          <Image
-            class="w-[36rem] sm:w-[40rem] h-auto select-none pointer-events-none"
-            src={pic1}
-            alt="Foto"
-          />
-        </div>
+      </section>
+      <section class="mx-10">
+        <Image class="mx-auto mb-40" src={datavisualisering} alt="Foto" />
+      </section>
 
-        <!-- Midterste kort -->
-        <div
-          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[10deg] animate-top-2"
+      <section class="max-w-5xl mx-auto px-6 py-12 mb-20">
+        <Heading
+          class="text-accent-900"
+          htmlheading="h2"
+          size="medium"
+          font="underoverskrift"
         >
-          <Image
-            class="w-[36rem] sm:w-[40rem] h-auto select-none pointer-events-none"
-            src={pic2}
-            alt="Foto"
-          />
-        </div>
+          How to participate
+        </Heading>
 
-        <!-- Nederste kort -->
+        <div class="grid grid-cols-1 md:grid md:grid-cols-3 md:gap-8 mt-6">
+          {/* Liste i venstre side */}
+          <div class="space-y-6 col-span-2">
+            <li>
+              <Text>
+                Take a photo of your instant with your smartphone (or scan for
+                max quality) – the file should be between 2–10 MB, jpg/jpeg or
+                webp format.
+              </Text>
+            </li>
+            <li>
+              <Text>
+                Upload your photo and credentials via the “share your instants”
+                page.</Text
+              >
+            </li>
+            <li>
+              <Text>
+                Agree to our terms and conditions. The short version:
+                Participants must be 18+, portrayed persons must have given
+                consent, and you agree your instant can be exhibited and used to
+                promote the contest.
+              </Text>
+            </li>
+            <li>
+              <Text>
+                You can make up to 5 submissions – repeat step 1–3 for each
+                submission ;-)</Text
+              >
+            </li>
+          </div>
+          {/* Tekst og pil i højre side */}
+          <div
+            class="flex flex-col items-center md:items-end justify-center text-accent-900 md:mt-50 mt-10"
+          >
+            <Text class="mb-2">Still need inspiration?</Text>
+            <Image src={pil} alt="Arrow" class="w-15 h-auto" />
+          </div>
+        </div>
+      </section>
+      <section class="bg-accent-900 py-12 mb-40 overflow-hidden">
+        <!-- centreret “scene” til bunken -->
         <div
-          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-10deg] animate-top-3"
+          class="relative mx-auto max-w-[600px] sm:max-w-[900px] h-[400px] sm:h-[650px]"
         >
-          <Image
-            class="w-[36rem] sm:w-[40rem] h-auto select-none pointer-events-none"
-            src={pic3}
-            alt="Foto"
-          />
-        </div>
-      </div>
-    </section>
+          <!-- Øverste kort -->
+          <div
+            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[6deg] animate-top-1"
+          >
+            <Image
+              class="w-[36rem] sm:w-[40rem] h-auto select-none pointer-events-none"
+              src={pic1}
+              alt="Foto"
+            />
+          </div>
 
-    <section>
-      <LinkCard />
-      <LinkCard />
-      <LinkCard />
-      <LinkCard />
+          <!-- Midterste kort -->
+          <div
+            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[10deg] animate-top-2"
+          >
+            <Image
+              class="w-[36rem] sm:w-[40rem] h-auto select-none pointer-events-none"
+              src={pic2}
+              alt="Foto"
+            />
+          </div>
+
+          <!-- Nederste kort -->
+          <div
+            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-10deg] animate-top-3"
+          >
+            <Image
+              class="w-[36rem] sm:w-[40rem] h-auto select-none pointer-events-none"
+              src={pic3}
+              alt="Foto"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="m-10 md:container md:mx-auto">
+        <Heading
+          class="text-accent-900"
+          htmlheading="h2"
+          size="medium"
+          font="underoverskrift"
+        >
+          You can also get a lot of inspiration from<br />the art Photography
+          scene.
+        </Heading><br />
+
+        <br /><div
+          class="grid grid-cols-1 gap-10 justify-items-center md:grid-cols-2 md:gap-20"
+        >
+          <div class="md:place-self-end">
+            <LinkCard
+              stylingclasses="bg-secondary-900 text-primary-900 md:place-self-end"
+              link="https://www.danisaacwallin.com/"
+              h3="Dan Isaac Wallin"
+              p="...is a swedish art photographer, who uses large format and vintage polaroid cameras for his work. His work hangs in numerous houses as posters."
+              psmall="https://www.danisaacwallin.com/"
+              stroke="#000000"
+            />
+          </div>
+
+          <div class="md:place-self-start">
+            <LinkCard
+              stylingclasses="bg-accent-900"
+              link="https://www.kelterphotography.com/"
+              h3="Mette Kelter"
+              p="... is a danish art photographer, who often experiments with deliberate destruction of the chemical process in instant photos. One of the key words here is unpredictability in the work process, which leads to interesting and unique artworks."
+              psmall="https://www.kelterphotography.com/"
+              stroke="#FFFFFF"
+            />
+          </div>
+
+          <div class="md:order-last md:place-self-start">
+            <LinkCard
+              stylingclasses="bg-secondary-900 text-primary-900"
+              link="https://en.wikipedia.org/wiki/Maripol"
+              h3="Maripol"
+              p="... is a french artist/photographer/film producer. Her claim to fame was in the 1980’s, where she photographed famous people with a Polaroid SX-70. Her photographs are still very influential in the fashion industry. "
+              psmall="https://en.wikipedia.org/wiki/Maripol"
+              stroke="#000000"
+            />
+          </div>
+
+          <div class="md:place-self-end">
+            <LinkCard
+              stylingclasses="bg-accent-900"
+              link="https://www.taschen.com/en/books/photography/40752/the-polaroid-book-45th-ed/"
+              h3="The Polaroid collection"
+              p="... instant photographs assembled by the Polaroid corporation and featured work from a lot of famous photographers. The collection was split into various parts and put on auction when the Polaroid corporation went into bankruptcy in 2008. Luckily, you can find books with photographs from the collection, for instance The Polaroid Book by Steve Crist and Barbara Hitchcock. "
+              psmall="https://www.taschen.com/"
+              stroke="#FFFFFF"
+            />
+          </div>
+        </div>
+      </section>
     </section>
   </main>
 </MainLayout>
