@@ -1,18 +1,51 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
+import eklogo from "../assets/images/eklogo.webp";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import Button from "../components/Button.astro";
-
-import NomineeCard from "../components/NomineeCard.astro";
 ---
 
 <MainLayout title="Info">
   <main class="">
-    <section></section>
-    <section></section>
+    <section class="m-10 grid grid-cols-1 gap-10 md:container md:mx-auto">
+      <Heading stylingclasses="mb-10" htmlheading="h1" size="large" font="overskrift">Information</Heading>
+      <div class="md:grid md:grid-cols-2 md:gap-20">
+        <article class="bg-secondary-900 text-primary-900 p-10 mb-20 max-w-115 md:place-self-end">
+          <svg class="-mt-20 mb-5" width="59" height="83" viewBox="0 0 59 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.8483 5.54536C14.857 5.85157 10.5269 7.72897 5.06729 13.557C3.0435 15.7173 2.08053 19.3384 2.00027 23.2496C1.94491 25.9475 10.3776 25.3688 18.1726 25.1259C31.1409 24.7218 44.1122 10.0935 44.9155 8.41914C45.3151 7.58619 45.3307 6.6344 45.3691 5.69895C45.4075 4.76351 45.3743 3.8342 44.162 3.08012C34.72 1.15572 25.0469 2.05496 19.6728 3.80834C17.1164 4.55646 14.9064 5.01696 11.5398 6.21792" stroke="#6487F2" stroke-width="4" stroke-linecap="round"></path>
+            <path d="M20.0889 14.846C20.0889 14.8365 20.3963 15.7538 26.2308 27.0833C31.6259 37.5596 42.4954 57.355 48.6363 68.241C54.7771 79.1269 55.996 80.4325 56.5884 80.6012C57.1807 80.7699 57.1095 79.7623 53.0992 70.6391C49.0889 61.5159 41.1417 44.3076 36.4922 33.7865C30.7319 19.9529 28.9666 15.6783 27.8344 13.9485C27.323 13.0803 26.9396 12.2317 26.5447 11.3574" stroke="#6487F2" stroke-width="4" stroke-linecap="round"></path>
+          </svg>
+          <Heading htmlheading="h3" size="medium" font="underoverskrift">Who are we?</Heading>
+          <Text>... Instant Day is a small project run by a couple of lecturers from the Multimedia Design programme at EK - Business Academy Copenhagen. </Text>
+          <Text>Instant Day is a bi-annual project where lecturers and students collaborate on a digital design and communication project related to the Instant Day competition (this website). </Text>
+          <Text>In essence, we just want to promote instant photography and have fun while doing it. </Text>
+          <Text>Cheers.</Text>
+        </article>
+        <article class="bg-accent-900 p-10 max-w-115 md:mb-20">
+          <svg class="-mt-20 mb-5" width="59" height="83" viewBox="0 0 59 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.8483 5.54536C14.857 5.85157 10.5269 7.72897 5.06729 13.557C3.0435 15.7173 2.08053 19.3384 2.00027 23.2496C1.94491 25.9475 10.3776 25.3688 18.1726 25.1259C31.1409 24.7218 44.1122 10.0935 44.9155 8.41914C45.3151 7.58619 45.3307 6.6344 45.3691 5.69895C45.4075 4.76351 45.3743 3.8342 44.162 3.08012C34.72 1.15572 25.0469 2.05496 19.6728 3.80834C17.1164 4.55646 14.9064 5.01696 11.5398 6.21792" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"></path>
+            <path d="M20.0889 14.846C20.0889 14.8365 20.3963 15.7538 26.2308 27.0833C31.6259 37.5596 42.4954 57.355 48.6363 68.241C54.7771 79.1269 55.996 80.4325 56.5884 80.6012C57.1807 80.7699 57.1095 79.7623 53.0992 70.6391C49.0889 61.5159 41.1417 44.3076 36.4922 33.7865C30.7319 19.9529 28.9666 15.6783 27.8344 13.9485C27.323 13.0803 26.9396 12.2317 26.5447 11.3574" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"></path>
+          </svg>
+          <Heading htmlheading="h3" size="medium" font="underoverskrift">The judges</Heading>
+          <Text>... Submissions will be reviewed by:</Text>
+          <li><Text>Jonas Hasle (Assistant lecturer, Multimedia Design programme at EK)</Text></li>
+          <li><Text>Anders Dollerup (Associate lecturer, Multimedia Design programme at EK)</Text></li>
+          <li><Text>Birgitte Heide (Associate lecturer, Multimedia Design programme at EK)</Text></li>
+          <li><Text>Stefan Grage (Associate lecturer, Multimedia Design programme at EK)</Text></li>
+          <li><Text>Students on the Digital Design Elective on the Multimedia Design programme at KEA</Text></li>
+        </article>
+      </div>
+    </section>
+
+    <section class="m-10 md:container md:mx-auto lg:grid lg:grid-cols-2 lg:gap-20">
+      <div>
+        <Heading htmlheading="h2" size="medium" font="underoverskrift">Our sponsors</Heading>
+        <Text stylingclasses="ml-10 md:ml-20">Instant Day is not affiliated to any companies within the Instant Photography industry. The only organisation backing us is EK - Business Academy Copenhagen. At least so far. </Text>
+      </div>
+      <div class="self-end">
+        <a href="https://www.ek.dk/" target="_blank"><Image class="scale-90 mt-5 md:scale-100 lg:mt-40 lg:-ml-35 hover:scale-105 hover:-rotate-5 duration-300 ease-in-out" src={eklogo} alt="EK - Business Academy Copenhagen" /> </a>
+      </div>
+    </section>
   </main>
 </MainLayout>
