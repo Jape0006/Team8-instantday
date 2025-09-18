@@ -2,7 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
+import kamerapige from "../assets/images/kamerapige.svg";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
@@ -62,10 +62,10 @@ import Button from "../components/Button.astro";
 
         <!-- Billede til højre -->
         <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-          <img
-            src="src/assets/images/kamerapige.svg"
-            alt="kamerapige"
+          <Image
             class="mx-auto w-2/3 sm:w-1/2 md:max-w-full h-auto"
+            src={kamerapige}
+            alt="kamerapige"
           />
         </div>
       </section>
