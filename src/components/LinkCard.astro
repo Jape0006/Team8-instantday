@@ -1,0 +1,19 @@
+---
+const { h3, p, psmall, link, stroke, stylingclasses = "" } = Astro.props;
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+---
+
+<a href={link} target="_blank">
+  <article class="p-10 aspect-square flex flex-col max-w-115 hover:scale-105 duration-300 ease-in-out" class:list={[stylingclasses]}>
+    <Heading stylingclasses="" htmlheading="h3" size="medium" font="underoverskrift">{h3}</Heading>
+    <Text stylingclasses="">{p}</Text>
+    <div class="mt-auto flex justify-between items-end">
+      <Text stylingclasses="text-xs underline mb-0">{psmall}</Text>
+      <svg class="scale-75 md:scale-100" width="58" height="53" viewBox="0 0 58 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 3C5.949 4.44344 33.8366 27.7263 51.1019 43.7087C52.7143 45.2013 54.1033 46.0956 54.1503 47.0905C54.1973 48.0855 52.8758 49.1367 50.924 49.4155C48.9721 49.6942 46.4298 49.1686 38.6293 48.8591C30.8289 48.5495 17.8472 48.472 4.12322 47.0278" stroke={stroke} stroke-width="6" stroke-linecap="round"></path>
+        <path d="M54.3338 48.0169C54.3338 47.9698 54.3338 47.9227 54.1283 41.9581C53.9227 35.9934 53.5117 24.1126 53.2735 17.5376C53.0354 10.9626 52.9827 10.0534 52.9285 9.1167" stroke={stroke} stroke-width="6" stroke-linecap="round"></path>
+      </svg>
+    </div>
+  </article>
+</a>

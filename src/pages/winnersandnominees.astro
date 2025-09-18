@@ -1,18 +1,85 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
+import firstinstant from "../assets/images/pexels-polina-tankilevitch-5264597.webp";
+import kamerainstant from "../assets/images/kamerainstant.svg";
+import vinderfotoer from "../assets/images/vinderfotoer.webp";
+import spejlvendtkamera from "../assets/images/spejlvendtkamera.svg";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import Button from "../components/Button.astro";
-
 import NomineeCard from "../components/NomineeCard.astro";
+import LinkCard from "../components/LinkCard.astro";
+import Nominee1 from "../assets/images/pexels-fotios-photos-2309591.webp";
+import Nominee2 from "../assets/images/pexels-fotios-photos-2774345.webp";
+import Nominee3 from "../assets/images/pexels-fotios-photos-2799187.webp";
+import Nominee4 from "../assets/images/pexels-fotios-photos-2958096.webp";
+import Nominee5 from "../assets/images/pexels-fotios-photos-3586765.webp";
+import Nominee6 from "../assets/images/pexels-inga-sv-3550245.webp";
+import Nominee7 from "../assets/images/pexels-luis-antonio-de-lima-guimaraes-1834294-3414187.webp";
+import Nominee8 from "../assets/images/pexels-luis-antonio-de-lima-guimaraes-1834294-3414186.webp";
+import Nominee9 from "../assets/images/pexels-mrssaiyanart-2868044.webp";
 ---
 
 <MainLayout title="Winner and nominees">
-  <main class="">
-    <section></section>
-    <section></section>
-    <section></section>
+  <main>
+    <section class="m-10 md:container md:mx-auto md:grid md:grid-cols-2 md:gap-20 md:items-center">
+      <div>
+        <Heading htmlheading="h1" size="large" font="overskrift">Winner &<br />nominees</Heading>
+        <Text stylingclasses="ml-10 md:ml-20">Instant Day was quite a success with more than [ANTAL] contributions. So it was difficult to find a winner. After a couple of long but exciting days, the judges agreed on the winner and the [ANTAL NOMINEES] nominees.</Text>
+      </div>
+      <div>
+        <Image class="mt-15 md:mt-0 md:scale-80" src={kamerainstant} alt="Instant Kamera" />
+        <Image class="rotate-6 -mt-5 md:scale-55 md:-mt-50" src={firstinstant} alt="Foto af 2 kvinder på en mark" />
+      </div>
+    </section>
+
+    <section class="bg-accent-900 p-10">
+      <div class="md:container md:mx-auto md:grid md:grid-cols-2 md:gap-20">
+        <div>
+          <Heading htmlheading="h2" size="medium" font="underoverskrift">The winner of Instant day 2025 is...</Heading>
+          <Image class="py-10 md:py-0 md:scale-90" src={vinderfotoer} alt="Foto af 3 kvinder" />
+        </div>
+        <div class="md:self-end md:mb-30">
+          <Heading htmlheading="h3" size="medium" font="underoverskrift">"Three women standing"</Heading>
+          <Text>Lisa Jones</Text>
+          <Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit enim architecto eligendi libero, dicta eaque natus atque iste quos pariatur consequatur illum! Nostrum recusandae nihil vel assumenda non, accusamus numquam!</Text>
+        </div>
+      </div>
+    </section>
+
+    <section class="m-10 flex flex-col md:container md:mx-auto">
+      <Image class="pt-5 pb-13 self-center scale-120 sm:scale-150 md:self-end md:scale-170 md:mt-30 md:mr-30" src={spejlvendtkamera} alt="Instant kamera" />
+      <div class="md:-mt-30">
+        <Heading htmlheading="h2" size="medium" font="underoverskrift">Best of 2025 - nominees</Heading>
+        <div class="sm:grid sm:grid-cols-2 sm:gap-10 md:grid md:grid-cols-3 md:gap-15">
+          <NomineeCard h3="Instant title 1" p="Name Lastname 1"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee1} alt="Instant foto" /></NomineeCard>
+          <NomineeCard h3="Instant title 2" p="Name Lastname 2"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee2} alt="Instant foto" /></NomineeCard>
+          <NomineeCard h3="Instant title 3" p="Name Lastname 3"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee3} alt="Instant foto" /></NomineeCard>
+          <NomineeCard h3="Instant title 4" p="Name Lastname 4"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee4} alt="Instant foto" /></NomineeCard>
+          <NomineeCard h3="Instant title 5" p="Name Lastname 5"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee5} alt="Instant foto" /></NomineeCard>
+          <NomineeCard h3="Instant title 6" p="Name Lastname 6"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee6} alt="Instant foto" /></NomineeCard>
+          <NomineeCard h3="Instant title 7" p="Name Lastname 7"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee7} alt="Instant foto" /></NomineeCard>
+          <NomineeCard h3="Instant title 8" p="Name Lastname 8"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee8} alt="Instant foto" /></NomineeCard>
+          <NomineeCard h3="Instant title 9" p="Name Lastname 9"><Image class="hover:scale-105 duration-300 ease-in-out" src={Nominee9} alt="Instant foto" /></NomineeCard>
+        </div>
+      </div>
+    </section>
+    <section class="m-10 grid grid-cols-1 gap-10 justify-items-center md:container md:mx-auto md:grid-cols-2 md:gap-20">
+      <div class="md:place-self-end">
+        <LinkCard stylingclasses="bg-secondary-900 text-primary-900 md:place-self-end" link="https://www.danisaacwallin.com/" h3="Dan Isaac Wallin" p="...is a swedish art photographer, who uses large format and vintage polaroid cameras for his work. His work hangs in numerous houses as posters." psmall="https://www.danisaacwallin.com/" stroke="#000000" />
+      </div>
+
+      <div class="md:place-self-start">
+        <LinkCard stylingclasses="bg-accent-900" link="https://www.kelterphotography.com/" h3="Mette Kelter" p="... is a danish art photographer, who often experiments with deliberate destruction of the chemical process in instant photos. One of the key words here is unpredictability in the work process, which leads to interesting and unique artworks." psmall="https://www.kelterphotography.com/" stroke="#FFFFFF" />
+      </div>
+
+      <div class="md:order-last md:place-self-start">
+        <LinkCard stylingclasses="bg-secondary-900 text-primary-900" link="https://en.wikipedia.org/wiki/Maripol" h3="Maripol" p="... is a french artist/photographer/film producer. Her claim to fame was in the 1980’s, where she photographed famous people with a Polaroid SX-70. Her photographs are still very influential in the fashion industry. " psmall="https://en.wikipedia.org/wiki/Maripol" stroke="#000000" />
+      </div>
+
+      <div class="md:place-self-end">
+        <LinkCard stylingclasses="bg-accent-900" link="https://www.taschen.com/en/books/photography/40752/the-polaroid-book-45th-ed/" h3="The Polaroid collection" p="... instant photographs assembled by the Polaroid corporation and featured work from a lot of famous photographers. The collection was split into various parts and put on auction when the Polaroid corporation went into bankruptcy in 2008. Luckily, you can find books with photographs from the collection, for instance The Polaroid Book by Steve Crist and Barbara Hitchcock. " psmall="https://www.taschen.com/" stroke="#FFFFFF" />
+      </div>
+    </section>
   </main>
 </MainLayout>

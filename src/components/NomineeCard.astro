@@ -1,0 +1,11 @@
+---
+const { h3, p } = Astro.props;
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+---
+
+<article class="my-8">
+  <slot />
+  <Heading stylingclasses="mt-4" htmlheading="h3" size="medium" font="underoverskrift">"{h3}"</Heading>
+  <Text>{p}</Text>
+</article>
