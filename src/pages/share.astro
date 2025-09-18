@@ -7,12 +7,332 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
-
 <MainLayout title="Share your instant">
   <main class="">
-    <section></section>
-    <section>
-      <Button />
-    </section>
+  <div class="px-6 sm:px-10 md:px-16 lg:px-24">
+
+  <!-- Container for h1 og h2 med afstand -->
+  <div class="flex flex-col space-y-8 sm:space-y-10 md:space-y-12">
+    <Heading htmlheading="h1" size="large" font="overskrift" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+      SHARE YOUR INSTANT
+    </Heading>
+
+    <Heading htmlheading="h2" size="medium" font="underoverskrift" class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 md:mb-8">
+      Ready to share your instants? How to participate
+    </Heading>
+  </div>
+
+  <section class="flex flex-col md:flex-row items-start md:items-start gap-6 md:gap-8 mt-6">
+
+    <!-- Tekst til venstre -->
+    <div class="md:w-1/2">
+      <text class="leading-relaxed text-sm sm:text-base md:text-base lg:text-lg">
+        Got an instant photo ready for the public?<br />
+        In order to take part in Instant Day:<br /><br />
+
+        1. Take a photo of your instant with your smartphone (or scan it for max. quality) - the file should be between 2 - 10 MB, in jpg/jpeg or webp format.<br /><br />
+
+        2. Upload your photo and credentials in the form below<br /><br />
+
+        3. Agree to our terms and conditions [anchor til “terms and conditions” sektionen]. 
+        The short version: Participants have to be 18+, portrayed persons must have given consent, and you agree that your instant can be exhibited and used to promote the photo contest.<br /><br />
+
+        4. You can make up to 5 submissions - go through step 1-3 for each submission.
+      </text>
+    </div>
+
+    <!-- Billede til højre -->
+    <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
+      <img src="src/assets/images/kamerapige.svg" alt="kamerapige" class="mx-auto w-2/3 sm:w-1/2 md:max-w-full h-auto" />
+    </div>
+    </div>
+  </section>
+  
+<section>
+  <div class="px-6 sm:px-10 md:px-16 lg:px-24 mt-28 sm:mt-24 md:mt-28 lg:mt-32">
+
+    <!-- H2 med meget luft under -->
+  <div class="mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+  <Heading 
+    htmlheading="h2" 
+    size="medium" 
+    font="underoverskrift"
+  >
+    Fill out the form
+  </Heading>
+</div>
+
+
+    <!-- FORMULAR -->
+    <form 
+      id="submissionForm" 
+      action="#thankyou" 
+      method="POST" 
+      class="flex flex-col gap-5 sm:gap-6 md:gap-6 max-w-full md:max-w-lg mx-auto md:mx-0 text-[var(--color-secondary-900)]"
+    >
+      <!-- Full name -->
+      <div class="flex flex-col gap-2 sm:gap-2.5">
+        <label class="font-[var(--font-p)] text-sm sm:text-base md:text-base">Full name</label>
+        <input 
+          type="text" 
+          name="name" 
+          required 
+          class="bg-[var(--color-accent-900)] text-[var(--color-secondary-900)] p-2 sm:p-2.5 md:p-3 rounded focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary-900)] text-sm sm:text-base md:text-base"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col gap-2 sm:gap-2.5">
+        <label class="font-[var(--font-p)] text-sm sm:text-base md:text-base">E-mail</label>
+        <input 
+          type="email" 
+          name="email" 
+          required 
+          class="bg-[var(--color-accent-900)] text-[var(--color-secondary-900)] p-2 sm:p-2.5 md:p-3 rounded focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary-900)] text-sm sm:text-base md:text-base"
+        />
+      </div>
+
+      <!-- Photo upload -->
+      <div class="flex flex-col gap-2 sm:gap-2.5">
+        <label class="font-[var(--font-p)] text-sm sm:text-base md:text-base">Photo upload</label>
+        <input 
+          type="file" 
+          name="photo" 
+          accept=".jpg,.jpeg,.webp" 
+          required 
+          class="bg-[var(--color-accent-900)] text-[var(--color-secondary-900)] p-2 sm:p-2.5 md:p-3 rounded focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary-900)] text-sm sm:text-base md:text-base"
+        />
+      </div>
+
+      <!-- Submission title -->
+      <div class="flex flex-col gap-2 sm:gap-2.5">
+        <label class="font-[var(--font-p)] text-sm sm:text-base md:text-base">Submission title</label>
+        <input 
+          type="text" 
+          name="title" 
+          required 
+          class="bg-[var(--color-accent-900)] text-[var(--color-secondary-900)] p-2 sm:p-2.5 md:p-3 rounded focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary-900)] text-sm sm:text-base md:text-base"
+        />
+      </div>
+
+      <!-- Submission description -->
+      <div class="flex flex-col gap-2 sm:gap-2.5">
+        <label class="font-[var(--font-p)] text-sm sm:text-base md:text-base">
+          Submission description/story – describe the image and how you took it in a sentence or two.
+        </label>
+        <textarea 
+          name="description" 
+          rows="4" 
+          required 
+          class="bg-[var(--color-accent-900)] text-[var(--color-secondary-900)] p-2 sm:p-2.5 md:p-3 rounded focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary-900)] text-sm sm:text-base md:text-base"
+        ></textarea>
+      </div>
+
+      <!-- Terms & conditions -->
+      <div class="flex items-center gap-2 text-sm sm:text-base md:text-base">
+        <input 
+          type="checkbox" 
+          name="terms" 
+          required 
+          class="w-4 h-4 accent-[var(--color-accent-900)]"
+        />
+        <span class="font-[var(--font-p)]">
+          I have read and agree to the 
+          <button 
+            type="button" 
+            id="openTerms" 
+            class="underline font-bold text-[var(--color-secondary-900)]"
+          >
+            terms and conditions
+          </button>
+        </span>
+      </div>
+
+      <!-- Submit -->
+      <div class="flex justify-center">
+        <button 
+          type="submit" 
+          class="bg-[var(--color-accent-900)] text-[var(--color-secondary-900)] font-bold py-2 sm:py-2.5 md:py-3 px-4 sm:px-5 md:px-6 rounded hover:opacity-90 transition text-sm sm:text-base md:text-base"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<!-- TERMS POPUP -->
+<section>
+  <div id="termsModal" class="hidden fixed inset-0 bg-[var(--color-primary-900)] bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-[var(--color-secondary-900)] text-[var(--color-primary-900)] max-w-2xl p-6 rounded-lg relative overflow-y-auto max-h-[80vh] font-[var(--font-p)]">
+      
+      <!-- Luk-knap -->
+      <button id="closeTerms" class="absolute top-2 right-2 text-[var(--color-primary-900)] font-bold">✕</button>
+      
+      <!-- Titel -->
+      <Heading htmlheading="h2" size="medium" font="underoverskrift" class="mb-6 text-center">
+        Terms & Conditions
+      </Heading><br>
+
+      <!-- Indhold -->
+      <div class="space-y-6 text-sm leading-relaxed">
+
+           <Heading htmlheading="h2" size="small" font="underoverskrift" class="mb-6 text-center">
+          By participating in the contest, you accept the following terms and conditions.
+      </Heading>
+
+        <div class="space-y-2">
+          
+          <text class="font-bold text-base">Participation</text>
+          <text class="block">
+            The competition is open to all photographers, both amateurs and professionals, who are over 18 years old.
+          </text>
+        </div>
+
+        <div class="space-y-2">
+          <text class="font-bold text-base">Instant Photo</text>
+          <text class="block">
+            Every submission has to be an analogue instant photo – not a digital montage made in a photo editing suite. 
+            The instant can be made in various ways, with analogue instant cameras, digital instant cameras like 
+            the Fujifilm EVO or scan-and-print tools like the Polaroid Lab. The instant photo can be manipulated with 
+            analogue processes – the organizers encourage instant photography experiments. The submission can depict 
+            the instant photo in many ways: as a flat scan with or without the instant photo frame, as a photo showing 
+            the instants in a frame, on the wall etc. The instant doesn’t need to be just one photo: it can be a 
+            panorama or collage of multiple instants that make up one submission.
+          </text>
+        </div>
+
+        <div class="space-y-2">
+          <text class="font-bold text-base">Consent</text>
+          <text class="block">
+            It is prohibited to upload photographs of people who have not given consent to the publication of the image. 
+            Images of people in private or embarrassing situations, regardless of whether they are photographed in a 
+            public place, are not allowed.
+          </text>
+        </div>
+
+        <div class="space-y-2">
+          <text class="font-bold text-base">Legal stuff</text>
+          <text class="block">
+            The organizers reserve the right to disqualify any participant who violates these conditions. 
+            The organizers assume no responsibility for any loss, damage or injury that may arise as a result of 
+            participation in the competition or the use of prizes. Participants release the organizers from any claim, 
+            lawsuit or liability related to their participation in the competition.
+          </text>
+        </div>
+
+        <div class="space-y-2">
+          <text class="font-bold text-base">Number of submissions</text>
+          <text class="block">
+            You can enter the competition with a total of five submissions.
+          </text>
+        </div>
+
+        <div class="space-y-2">
+          <text class="font-bold text-base">Usage rights</text>
+          <text class="block">
+            By submitting one or more images and thereby participating in the competition, you agree that the image 
+            may be used for the promotion of the photo competition and possibly in physical exhibition spaces afterwards. 
+            The organizers will credit the participants wherever practical and reasonably possible.
+          </text>
+        </div>
+
+        <div class="space-y-2">
+          <text class="font-bold text-base">Copyright</text>
+          <text class="block">
+            You must be the author of the submitted instants and have the rights to publish them. 
+            The instants must be free of third party rights. Participants retain all copyright in their submitted instants. 
+            By submitting instants to the competition, participants grant the organizers a non-exclusive license to use, 
+            reproduce and publish the submitted images in connection with the promotion of the competition, 
+            including on social media platforms, websites and printed materials. The organizers will credit 
+            the participants wherever practical and reasonable.
+          </text>
+        </div>
+
+        <div class="space-y-2">
+          <text class="font-bold text-base">Announcement of Winners</text>
+          <text class="block">
+            The winners of the competition will be announced on the official website and/or social media platforms of the organizers. 
+            By participating in the competition, the winners consent to the publication of their names and submitted photos for promotional purposes.
+          </text>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THANK YOU SEKTION -->
+<section id="thankyou" class="pt-20 px-6 sm:px-10 md:px-16 lg:px-24">
+  <div class="text-[var(--color-secondary-900)] font-[var(--font-p)] max-w-3xl">
+
+    <!-- Overskrift -->
+<!-- Wrapper for H2 med responsiv afstand over -->
+<div class="mt-12 sm:mt-16 md:mt-20">
+  <Heading 
+    htmlheading="h2" 
+    size="medium" 
+    font="underoverskrift"
+    class="mb-8 sm:mb-10 md:mb-12 text-left"
+  >
+    Thanks!
+  </Heading><br>
+</div>
+
+
+    <!-- Besked -->
+    <text class="block text-base sm:text-base md:text-lg lg:text-xl leading-tight mb-2">
+      You’re an instant champ! Thanks for the contribution.
+    </text>
+    <text class="block text-base sm:text-base md:text-lg lg:text-xl leading-tight mb-2">
+      The competition runs until October 18th.
+    </text>
+    <text class="block text-base sm:text-base md:text-lg lg:text-xl leading-tight mb-2">
+      Shortly after, we will review all the images and announce a winner on October 31st.
+    </text>
+    <text class="block text-base sm:text-base md:text-lg lg:text-xl leading-tight mb-2">
+      If you’re one of the lucky winners or nominees, we will contact you by e-mail.
+    </text>
+    <text class="block text-base sm:text-base md:text-lg lg:text-xl leading-tight mb-4">
+      Good luck!
+    </text>
+
+    <!-- Ny submission -->
+    <div class="pt-6">
+      <Heading htmlheading="h2" size="medium" font="underoverskrift" class="mb-4 text-left">
+        NB! Want to make one more submission?
+      </Heading><br>
+
+<br><Button href="#submissionForm">Start the submission form over</Button>
+
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<script>
+  const openBtn = document.getElementById("openTerms");
+  const closeBtn = document.getElementById("closeTerms");
+  const modal = document.getElementById("termsModal");
+
+  openBtn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+    }
+  });
+
+
+</script>
+
+
   </main>
 </MainLayout>
